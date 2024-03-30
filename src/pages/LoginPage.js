@@ -1,6 +1,8 @@
 import React from 'react'
 
 const LoginPage = () => {
+    console.log('Hello from Login')
+
     return (
         <div>
             {/* create form */}
