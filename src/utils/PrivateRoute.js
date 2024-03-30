@@ -15,17 +15,18 @@
 // export default PrivateRoute
 
 
-
-import { Route, Redirect } from 'react-router-dom'
+import React from 'react'
+import { Route, Navigate } from 'react-router-dom'
 
 // create component
 // pass in children ~ spread operator
 const PrivateRoute = ({children, ...rest}) => {
     // test that the private route is working
     console.log('Private route works')
+    const authenticated = false
     return(
         // put rest in the route
-        <Route {...rest}>{children}</Route>
+        <>{!authenticated ? <Navigate to="/login"/> : children}</>
     )
 }
 
